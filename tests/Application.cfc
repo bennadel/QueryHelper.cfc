@@ -5,16 +5,12 @@ component
 	{
 
 
-	// Set up any datasource your application might need.
-	this.datasource = "yourAppDatasource";
-
 	// Add any mappings that you need in order to load your modules from within
 	// the unit test specifications.
 	//
 	// NOTE: You can use the evaluatePathTraversal() method to navigate upto your application,
 	// and then down into any ColdFusion libraries you need to reference.
-	this.mappings[ "/yourAppRoot" ] = evaluatePathTraversal( "../" );
-	this.mappings[ "/yourAppLib" ] = evaluatePathTraversal( "../lib/" );
+	this.mappings[ "/lib" ] = evaluatePathTraversal( "../lib/" );
 
 
 }
