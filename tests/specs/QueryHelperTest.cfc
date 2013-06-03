@@ -56,9 +56,32 @@ component
 	}
 
 
+	public void function testThatGetColumnReturnsValues() {
+
+		var ids = queryHelper.getColumn( "id" );
+
+		assert(
+			arrayEquals( ids, [ 1, 2, 3, 4, 5 ] )
+		);
+
+	}
+
+
 	// ---
 	// PRIVATE METHODS.
 	// ---
+
+
+	private boolean function arrayEquals(
+		required array a,
+		required array b
+		) {
+
+		return(
+			complexObjectEquals( a, b )
+		);
+
+	}
 
 
 	private query function buildFriendsQuery() {
@@ -84,15 +107,27 @@ component
 	}
 
 
-	private boolean function queryEquals(
-		required query a,
-		required query b
+	private boolean function complexObjectEquals(
+		required any a,
+		required any b
 		) {
 
 		aData = serializeJSON( a );
 		bData = serializeJSON( b );
 
-		return( aData == bData );
+		return( lcase( aData ) == lcase( bData ) );
+
+	}
+
+
+	private boolean function queryEquals(
+		required query a,
+		required query b
+		) {
+
+		return(
+			complexObjectEquals( a, b )
+		);
 
 	}
 
