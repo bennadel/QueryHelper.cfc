@@ -44,6 +44,18 @@ component
 	}
 
 
+	public void function testThatQueryInMatchesQueryOut() {
+
+		var friendsIn = buildFriendsQuery();
+		var queryHelper = new lib.QueryHelper( friendsIn );
+
+		assert(
+			queryEquals( friendsIn, queryHelper.getQuery() )
+		);
+
+	}
+
+
 	// ---
 	// PRIVATE METHODS.
 	// ---
@@ -68,6 +80,19 @@ component
 		);
 
 		return( friends );
+
+	}
+
+
+	private boolean function queryEquals(
+		required query a,
+		required query b
+		) {
+
+		aData = serializeJSON( a );
+		bData = serializeJSON( b );
+
+		return( aData == bData );
 
 	}
 
