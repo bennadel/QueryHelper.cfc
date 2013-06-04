@@ -44,6 +44,16 @@ component
 	}
 
 
+	// I return the max value of the given column. If the column is empty, it returns zero.
+	public numeric function max( required string columnName ) {
+
+		return(
+			arrayMax( target[ columnName ] )
+		);
+
+	}
+
+
 	// I sort the query on the given column name. THIS Is returned as a short-cut.
 	public any function sort(
 		required string columnName,

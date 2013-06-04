@@ -121,6 +121,13 @@ component
 	}
 
 
+	public void function testGettingMaxValueOfColumn() {
+
+		assert( queryHelper.max( "id" ) == 5 );
+
+	}
+
+
 	// ---
 	// PRIVATE METHODS.
 	// ---
