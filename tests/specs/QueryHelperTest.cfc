@@ -10,6 +10,7 @@ component
 	// ---
 
 
+	// I get called before each test method.
 	public void function setup() {
 
 		queryHelper = new lib.QueryHelper( buildFriendsQuery() );
@@ -17,6 +18,7 @@ component
 	}
 
 
+	// I get called after each test method.
 	public void function teardown() {
 		
 		// ...

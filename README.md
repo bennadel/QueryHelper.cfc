@@ -8,7 +8,7 @@ I have created QueryHelper.cfc primarily as a means to test my [Tiny Test][2]
 unit-testing framework and to learn more about Test Driven Development (TDD)
 in general.
 
-QueryHelper.cfc is a ColdFusion query wrapper that provided high-level utility
+QueryHelper.cfc is a ColdFusion query wrapper that provides high-level utility
 methods for working with and manipulating ColdFusion queries. 
 
 
