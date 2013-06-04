@@ -91,7 +91,7 @@ component
 	}
 
 
-	public void function testThatSortWorks() {
+	public void function testThatSortWorksAsc() {
 
 		var friends = queryHelper.sort( "name" )
 			.getQuery()
@@ -102,6 +102,21 @@ component
 		assert( friends.name[ 3 ] == "Kim" );
 		assert( friends.name[ 4 ] == "Sarah" );
 		assert( friends.name[ 5 ] == "Tricia" );
+
+	}
+
+
+	public void function testThatSortWorksDesc() {
+
+		var friends = queryHelper.sort( "name", "desc" )
+			.getQuery()
+		;
+
+		assert( friends.name[ 1 ] == "Tricia" );
+		assert( friends.name[ 2 ] == "Sarah" );
+		assert( friends.name[ 3 ] == "Kim" );
+		assert( friends.name[ 4 ] == "Joanna" );
+		assert( friends.name[ 5 ] == "Heather" );
 
 	}
 
