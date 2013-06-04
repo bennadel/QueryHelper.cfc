@@ -64,6 +64,11 @@ component
 			arrayEquals( ids, [ 1, 2, 3, 4, 5 ] )
 		);
 
+		// Just make sure we get the expected failure.
+		assertFalse(
+			arrayEquals( ids, [ 5, 4, 3, 2, 1 ] )	
+		);
+
 	}
 
 

@@ -28,7 +28,7 @@ component
 		for ( var i = 1 ; i <= target.recordCount ; i++ ) {
 
 			arrayAppend( values, target[ name ][ i ] );
-			
+
 		}
 
 		return( values );
