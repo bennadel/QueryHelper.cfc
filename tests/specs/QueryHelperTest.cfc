@@ -72,6 +72,38 @@ component
 	}
 
 
+	public void function testThatTheQueryCanBeConvertedToArray() {
+
+		var expectedArray = [
+			{ id = 1, name = "Sarah" },
+			{ id = 2, name = "Joanna" },
+			{ id = 3, name = "Kim" },
+			{ id = 4, name = "Heather" },
+			{ id = 5, name = "Tricia" }
+		];
+
+		assert(
+			arrayEquals( expectedArray, queryHelper.toArray() )
+		);
+
+	}
+
+
+	public void function testThatSortWorks() {
+
+		var friends = queryHelper.sort( "name" )
+			.getQuery()
+		;
+
+		assert( friends.name[ 1 ] == "Heather" );
+		assert( friends.name[ 2 ] == "Joanna" );
+		assert( friends.name[ 3 ] == "Kim" );
+		assert( friends.name[ 4 ] == "Sarah" );
+		assert( friends.name[ 5 ] == "Tricia" );
+
+	}
+
+
 	// ---
 	// PRIVATE METHODS.
 	// ---
